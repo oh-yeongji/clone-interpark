@@ -29,13 +29,32 @@ body {
   word-break: keep-all;
 }
 /* 공통클래스 */
+
+/* inner가 1024보다 작으면 760 이고 760보다 작으면 100% */
 .inner {
   display: block;
   position: relative;
-  width: 1280px;
-  width: 128rem;
+  max-width: 1280px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1280px) {
+  .inner {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .inner {
+    max-width: 760px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .inner {
+    max-width: 100%;
+  }
+}
+
 /* float 해제 */
 .clearfix::after {
   display: block;
@@ -175,7 +194,7 @@ body {
   height: 38px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 50%;
-  background: #fff url(../images/btn_topArrow.svg) no-repeat center;
+  background: #fff url("../images/btn_topArrow.svg") no-repeat center;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.16);
   font-size: 0px;
   margin-top: 10px;
@@ -271,6 +290,7 @@ body {
 .header-right {
   float: right;
 }
+
 .member-list {
   margin-top: 17px;
   /* padding-top: 17px; */
@@ -336,7 +356,12 @@ body {
 .mypage-list li a b {
   font-weight: 500;
 }
-
+.mb-mypage {
+  position: absolute;
+  right: 10px;
+  top: -5px;
+  display: none;
+}
 .header-down {
 }
 
@@ -394,6 +419,73 @@ body {
   background: rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 1024px) {
+  .header {
+    border-bottom: 8px solid #f0f4f4;
+  }
+  .header .inner {
+    padding-top: 15px;
+    height: 230px;
+  }
+
+  .logo {
+    width: 77px;
+    height: 18px;
+    /* 인터파크 마크가 줄였을때 달라붙지않게 */
+    margin-left: 15px;
+  }
+  .header-left {
+    /*오른쪽 멤버 리스트가 안보이니까 비어서 위에 창 전체로 잡으면 그거의 반 하면 된다 */
+    /*하나만 쓰고 싶어서 */
+    width: 100%;
+  }
+  .search {
+    left: 50%;
+    top: 140px;
+    /* relative기준 왼쪽이라 의미없음 */
+    /* transform: translateX(-50%); */
+    transform: translateX(-50%);
+  }
+  .member-list {
+    display: none;
+  }
+  .mb-mypage {
+    display: block;
+  }
+  .header-down {
+    text-align: center;
+  }
+  .service-list {
+    /* 원래 block이였음 */
+    /* float:left를 가운데 정렬하는 방법은 어려워 */
+    display: inline-block;
+    float: none;
+    margin-top: 0px;
+  }
+  .service-list li {
+    padding-right: 20px;
+  }
+  .service-list li:last-child {
+    margin-right: 0px;
+  }
+
+  .service-list li a {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .service-list li a img {
+    display: block;
+    /* 옆으로 살짝 밈 */
+    /* margin-right: 0; */
+    /* 가운데 배치 */
+    margin: 0 auto;
+    width: 48px;
+    height: 48px;
+  }
+  .service-menu {
+    display: none;
+  }
+}
 /* 추천이벤트 */
 .promotion {
   padding-top: 30px;
@@ -415,6 +507,19 @@ body {
   width: 100%;
   height: auto;
 }
+
+@media screen and (max-width:1280px) {
+  
+}
+
+@media screen and (max-width:1024px) {
+  
+}
+
+@media screen and (max-width:760px) {
+  
+}
+
 
 /* 쇼핑추천 */
 .shopping {
@@ -998,7 +1103,7 @@ body {
   content: "";
   width: 8px;
   height: 6px;
-  background: url(/images/icon_arrow.svg) no-repeat center;
+  background: url("/images/icon_arrow.svg") no-repeat center;
   margin-left: 4px;
   /* 마음에 안들면 */
   vertical-align: 2px;

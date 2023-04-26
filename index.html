@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- 반응형 코드는 이게 있어야한다. -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1, user-scalable=no" />
     <!--Favicon -->
     <!-- 보통은 이것만 넣지만 바탕 밑에줄 요거 까지 넣는게 좋다 -->
     <link rel="icon" href="images/interpark.ico">
@@ -105,6 +106,7 @@
                 <input type="button" class="search-bt" />
                 <input type="reset" class="search-reset" />
               </form>
+              
             </div>
             <div class="header-right">
               <ul class="member-list">
@@ -128,9 +130,13 @@
                         <a href="#"><b>도서</b> 마이페이지</a>
                       </li>
                     </ul>
+                    
                   </div>
                 </li>
               </ul>
+              <a href="#" class="mb-mypage">
+                <img src="/images/icon_mypage.svg" alt="마이페이지">
+              </a>
             </div>
           </div>
           <div class="header-down clearfix">
