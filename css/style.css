@@ -173,6 +173,40 @@ body {
   height: 11px;
   background: url("../images/icon_linkArrow.svg") no-repeat center;
 }
+
+@media screen and (max-width: 1280px) {
+  .section-top {
+  }
+  .section-top > h2 {
+    /* 위랑같음 */
+  }
+  .section-top > p {
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section-top {
+  }
+  .section-top > h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+  .section-top > p {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .section-top {
+  }
+  .section-top > h2 {
+  }
+  .section-top > p {
+  }
+}
+
 /*플라잉 배너 */
 .fix-banner {
   /* 반응형 */
@@ -288,6 +322,7 @@ body {
 }
 
 .header-right {
+  position: relative;
   float: right;
 }
 
@@ -495,6 +530,10 @@ body {
 .promotion .inner {
   height: 345px;
 }
+.promotion .section-top {
+  display: none;
+  margin-bottom: 20px;
+}
 .promotion-slide {
   height: 100%;
 }
@@ -508,18 +547,37 @@ body {
   height: auto;
 }
 
-@media screen and (max-width:1280px) {
-  
+@media screen and (max-width: 1280px) {
+  .promotion .inner {
+    height: 275px;
+  }
 }
 
-@media screen and (max-width:1024px) {
-  
+@media screen and (max-width: 1024px) {
+  .promotion {
+  }
+
+  .promotion .inner {
+    height: 200px;
+    border-bottom: 8px solid #f0f4f4;
+  }
+  .promotion .section-top {
+    display: block;
+  }
+  .promotion .sw-bt {
+    display: none;
+  }
 }
 
-@media screen and (max-width:760px) {
-  
+@media screen and (max-width: 760px) {
+  .promotion .inner {
+    height: 190px;
+  }
+  .sw-promotion {
+    /* 원래 100%이고 강제로 50%으로 줄임 */
+    width: 50%;
+  }
 }
-
 
 /* 쇼핑추천 */
 .shopping {
