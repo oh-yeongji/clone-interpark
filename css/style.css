@@ -528,7 +528,9 @@ body {
 }
 
 .promotion .inner {
-  height: 345px;
+  height: 300px;
+  /* 이거 갑자기 추가됨 */
+  border-bottom: 8px solid #f0f4f4;
 }
 .promotion .section-top {
   display: none;
@@ -546,6 +548,31 @@ body {
   width: 100%;
   height: auto;
 }
+.sw-promotion-control {
+  position: relative;
+  display: none;
+  text-align: center;
+}
+.sw-promotion-pg {
+  /* inline-block이니까 글자취급해서  */
+  /* 위에 text-align:center하면 가운데 감*/
+  display: inline-block;
+}
+
+/*  어디에 추가하는지 몰라서 여기*/
+/* swiper.js 에서 자동으로 css 생성 */
+/* .sw-promotion-pg .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.2;
+  background-color: #000;
+}
+.sw-promotion-pg .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #f00;
+} */
+/*  */
 
 @media screen and (max-width: 1280px) {
   .promotion .inner {
@@ -558,7 +585,7 @@ body {
   }
 
   .promotion .inner {
-    height: 200px;
+    height: 300px;
     border-bottom: 8px solid #f0f4f4;
   }
   .promotion .section-top {
@@ -567,15 +594,76 @@ body {
   .promotion .sw-bt {
     display: none;
   }
+
+  .sw-promotion-control {
+    display: block;
+  }
+  /* swiper.js에서 자동으로 css 생성 */
+  /*  */
+  /* sw-promotion-pg를 추가했음 */
+  .sw-promotion-pg .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.2;
+    background-color: #000;
+  }
+
+  /* html을 다시 쓰는 것보다 css를 덮어주는게 낫다고 판단해서  */
+  /* swiper-pagination-bullet을 취소하고swiper-pagination-bullet active적용 */
+  /* .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #f00;
+  } */
+  /* .sw-promotion-pg .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #000;
+  } */
+
+  /* .sw-promotion-pg를 추가했음 */
+  /*  */
+  .sw-promotion-pg .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #f00;
+  }
 }
 
 @media screen and (max-width: 760px) {
   .promotion .inner {
-    height: 190px;
+    /* 높이없애버림 */
+    height: 290px;
   }
   .sw-promotion {
     /* 원래 100%이고 강제로 50%으로 줄임 */
+    /* 화면의 너비에 비해 줄어드는 건 맞다 */
+    /* 하지만 일정너비이하로는 줄어들지 않았으면 좋겠다. */
     width: 50%;
+    /* 아무리 줄어도 350px미만으로는 줄면안됨. */
+    min-width: 350px;
+  }
+
+  .sw-promotion-control {
+    margin-top: -20px;
+    z-index: 999;
+  }
+  /*  */
+  /*  */
+  /*  */
+  .sw-promotion-pg .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0.3;
+    background-color: #fff;
+    /*너비가 6에서20으로 변하는 데 0.5초가 걸린다. */
+    /* transition: 0.5s; */
+  }
+  .sw-promotion-pg .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 8px;
+
+    height: 8px;
+    background-color: #fff;
   }
 }
 
@@ -831,7 +919,7 @@ body {
   margin-bottom: 0px;
 }
 .ticket-title {
-  /* 2줄처리 */
+  /* 2줄처리  ...*/
   display: -webkit-box;
   color: #111;
   font-size: 18px;

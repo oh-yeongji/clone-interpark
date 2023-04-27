@@ -192,7 +192,7 @@
           <div class="promotion-slide">
             <button class="sw-bt sw-prev">이전</button>
             <button class="sw-bt sw-next">다음</button>
-
+<!-- promotion swiper -->
             <div class="swiper sw-promotion">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -229,6 +229,11 @@
                 </div>
               </div>
             </div>
+            
+         <!-- pagination -->
+         <div class="sw-promotion-control">
+         <div class="pagination sw-promotion-pg"></div>
+        </div>
           </div>
         </div>
       </section>
@@ -248,6 +253,12 @@
             nextEl: ".promotion .sw-next",
             prevEl: ".promotion .sw-prev",
           },
+pagination: {
+  el: ".sw-promotion-pg",
+  // 클릭이 가능
+  clickable:true,
+},
+
           breakpoints: {
             760: {
           slidesPerView: 2,
@@ -265,7 +276,7 @@
             <h2>쇼핑 추천</h2>
             <p>할인이 쎄다! 지금, 특가 상품을 확인하세요.</p>
             <div class="btns">
-              <a href="#" class="btns">쎈딜</a>
+              <a href="#" class="btns-active">쎈딜</a>
               <a href="#">베스트</a>
               <a href="#">오늘만특가</a>
               <a href="#">어린이날</a>
