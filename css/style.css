@@ -600,7 +600,7 @@ body {
 
 @media screen and (max-width: 1024px) {
   .header {
-    border-bottom: 8px solid #f0f4f4;
+    /* border-bottom: 8px solid #f0f4f4; */
   }
   .header .inner {
     padding-top: 15px;
@@ -674,7 +674,7 @@ body {
 }
 
 .promotion .inner {
-  height: 300px;
+  height: 345px;
   /* 이거 갑자기 추가됨 */
   /* 이거 f3으로 지워줬음 */
   /* border-bottom: 8px solid #f0f4f4; */
@@ -708,7 +708,7 @@ body {
 
 /*  어디에 추가하는지 몰라서 여기*/
 /* swiper.js 에서 자동으로 css 생성 */
-/* .sw-promotion-pg .swiper-pagination-bullet {
+.sw-promotion-pg .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -719,7 +719,7 @@ body {
   opacity: 1;
   background-color: #f00;
 } */
-/*  */
+/* 
 
 @media screen and (max-width: 1280px) {
   .promotion .inner {
@@ -936,7 +936,7 @@ body {
 }
 
 .tour .section-slide {
-  height: 355px;
+  /* height: 355px; */
 }
 
 .sw-tour {
@@ -954,9 +954,16 @@ body {
 .tour-img {
   position: relative;
   width: 100%;
-  height: 245px;
+  /* height: 245px; */
+  /* 1280px일때 높이가 245px이다. */
+  /* 1280px이 100vw라면? */
+  /* 245px 은 몇 vw일까? */
   /* 이미지가 너무 크면 글자가리니까 */
   /* 중앙이 안맞음 */
+  /* 소수점 2자리까지하고 만약셋제짜리까지 있을때 는 내림으로 숫자버림 */
+  /* 245 / 1280 * 100 */
+  height: 19.14vw;
+  max-height: 245;
   overflow: hidden;
 }
 .tour-img img {
@@ -969,11 +976,16 @@ body {
   /* 좌표,영역말고 내용 즉, 보이는 부분만 이동*/
   /* 하나씩 하면 먹힘 */
   /* 앱솔루트를 이용한 내용 중앙정렬 */
-  transform: translate(-50%, -50%);
+  /* scale(1.2) = 120%로 키워본다*/
+  transform: translate(-50%, -50%) scale(1.3);
 
   width: 100%;
 }
+
+
+
 .tour-info {
+  
   padding: 20px;
   /* 선택사항 */
   background: #fff;
@@ -1033,6 +1045,35 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
+@media screen and (max-width: 1024) {
+  .tour-img {
+    /* height: 138px; */
+  }
+  .tour-info {
+    height: 10px;
+  }
+  .tour-cate {
+    /* 4/27 16:27분 추가 */
+    top:-22px
+    line-height: 22px;
+    padding: 0 7px;
+    border-radius: 4px;
+  }
+  .tour-title {
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .tour-price {
+    font-size: 15px;
+  }
+  .tour-price b {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+@media screen and (max-width: 760px) {
+}
+
 /* 티켓랭킹 */
 .ticket {
   padding-top: 30px;
