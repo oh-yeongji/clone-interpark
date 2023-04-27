@@ -105,6 +105,13 @@ body {
 }
 
 /* section 내용 구조 */
+
+/* 사이 간격이 넓어서 */
+.wrap > section {
+  /* body밑에 섹션은 이렇게 들어가야함 */
+  padding-top: 30px;
+  padding-bottom: 90px;
+}
 .section-top {
   text-align: center;
 }
@@ -175,6 +182,9 @@ body {
 }
 
 @media screen and (max-width: 1280px) {
+  .wrap > section {
+  }
+
   .section-top {
   }
   .section-top > h2 {
@@ -185,6 +195,11 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+  .wrap > section {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
   .section-top {
   }
   .section-top > h2 {
@@ -199,6 +214,9 @@ body {
 }
 
 @media screen and (max-width: 760px) {
+  .wrap > section {
+    padding-bottom: 30px;
+  }
   .section-top {
   }
   .section-top > h2 {
@@ -232,6 +250,101 @@ body {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.16);
   font-size: 0px;
   margin-top: 10px;
+}
+/* 퀵메뉴 */
+.quick-menu {
+  display: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  /* 안보일 확률이있음 z-index싸움에서 져서 */
+  /*그래서 z-index를 줘야함 */
+  z-index: 99;
+}
+.quick-menu .inner {
+  /* flex는 레이아웃 전용 */
+  /* float를 편리하게 활용하도록 */
+  display: flex;
+  justify-content: space-around;
+  /* 가운데 빨간색이 혼자 조금 다른데 이걸로 센터 해주면 알아서 맞춰준다. */
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.quick-menu a {
+}
+
+@media screen and (max-width: 1024px) {
+  .quick-menu {
+    display: block;
+  }
+}
+/* 플라잉 마이페이지 */
+.fix-mypage {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* position absolute일때는 100%이면 안됨 */
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999999;
+}
+
+.fix-mypage-main {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  /* absolute로 아래로 내려줌 */
+  /* background: yellowgreen; */
+}
+.fix-mypage-main .inner {
+  border-radius: 18px 18px 0 0;
+  background: #fff;
+  overflow: hidden;
+  padding: 30px 0;
+  /* 가운데로 오기 */
+  text-align: center;
+}
+.fix-mypage-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.fix-mypage-list {
+  display: inline-block;
+}
+.fix-mypage-list li {
+  float: left;
+  margin-right: 40px;
+}
+.fix-mypage-list li:last-child {
+  margin-right: 0px;
+}
+
+.fix-mypage-list li a {
+  font-size: 14px;
+  color: #666;
+}
+.fix-mypage-list li a img {
+  width: 48px;
+  /* auto 일수도 48px일수도 그래서 안적어도 좋음 */
+  height: 48px;
+  display: block;
+  margin: auto;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 1024px) {
+  /* 자바스크립트 후에 하기 */
+  /* .fix-mypage {
+    display: none;
+  } */
 }
 /* 기본레이아웃 */
 .wrap {
@@ -522,9 +635,11 @@ body {
   }
 }
 /* 추천이벤트 */
+/* 원래 section.promotion */
 .promotion {
-  padding-top: 30px;
-  padding-bottom: 90px;
+  /* 위에 공통 클래스로 뽑아줌 */
+  /* padding-top: 30px;
+  padding-bottom: 90px; */
 }
 
 .promotion .inner {
