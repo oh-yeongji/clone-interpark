@@ -1590,6 +1590,7 @@ body {
   height: 100%;
 }
 .events-link {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -1606,6 +1607,12 @@ body {
   width: 100%;
   transform: translate(-50%, -50%);
   mix-blend-mode: multiply;
+}
+
+@media screen and (max-width: 1024px) {
+  .event {
+    display: none;
+  }
 }
 /* 하단 */
 .footer {
