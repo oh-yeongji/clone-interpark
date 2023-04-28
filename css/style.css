@@ -1403,6 +1403,7 @@ body {
   .live .section-slide {
     height: 285px;
   }
+
   .live-info {
     padding: 12px;
   }
@@ -1490,9 +1491,13 @@ body {
 }
 
 .books .section-slide {
-  height: 400px;
+  /* fill에 row하면 높이를 주지말자 */
+  /* height: 400px; */
 }
 
+.books .section-slide .sw-bt {
+  top: 41%;
+}
 .sw-books {
   height: 100%;
 }
@@ -1539,6 +1544,37 @@ body {
   /* 기울어짐 방지 */
   font-style: normal;
 }
+
+@media screen and (max-width: 1280px) {
+  .books .section-slide .sw-bt {
+    top: 44%;
+  }
+  .books-img {
+    height: 457px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .books-img {
+    height: 322px;
+  }
+  .books-info-title {
+    font-size: 13px;
+    line-height: 15px;
+    /* line-height *2 */
+    /* 한줄 밖에 안들어가므로 높이 안줘도 됨 */
+    /* height: 30px; */
+    margin: 4px 0;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  /* 1024에서 해주었으므로 760에서 필요없음 */
+
+  .books-img {
+    height: 41.66vw;
+  }
+}
+
 /* 이벤트 */
 .event {
   padding-top: 30px;
