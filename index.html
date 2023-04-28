@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <!-- 반응형 코드는 이게 있어야한다. -->
    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1, user-scalable=no" />
-    <!--Favicon -->
+    <!--favicon -->
     <!-- 보통은 이것만 넣지만 바탕 밑에줄 요거 까지 넣는게 좋다 -->
-    <link rel="icon" href="images/interpark.ico">
+    <link rel="icon" href="images/interpark.ico"/>
     <!-- 바탕화면 즐겨찾기 -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png"/>
     <!-- <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png"> -->
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png"> -->
     <link rel="manifest" href="images/favicon/site.webmanifest">
@@ -17,10 +17,10 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>인터파크</title>
-    <!-- html 버전 처리 -->
+   
     <!-- 인터넷익스플로우 9보다 작으면 작동. 밑에거는 꼭 넣어야한다고 생각. -->
     <!-- 조건부 해석 -->
-       <!-- SEO 적용 -->
+      
     <meta
       name="description"
       content="웹 퍼블리셔 & FE 개발자 홍길동 포트폴리오입니다."
@@ -39,6 +39,7 @@
       property="og:description"
       content="웹 퍼블리셔 & FE 개발자 홍길동 포트폴리오입니다."
     />
+     <!-- SEO 적용 -->
     <meta
       name="description"
       content="국내외 항공권, 숙소, 여행 최저가 예약부터 뮤지컬, 콘서트, 연극 티켓까지 모두 한번에 예약하세요"
@@ -58,14 +59,16 @@
     <meta property="og:url" content="https://www.interpark.com" />
     <meta property="og:site_name" content="인터파크" />
     <meta property="og:type" content="website" />
+    <!-- html 버전 처리 -->
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
     <!-- css 초기화 파일 적용  -->
     <link rel="stylesheet" href="css/reset.css">
     <!-- vender pre fix -->
     <script src="js/prefixfree.min.js"></script>
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-    <![endif]-->
-
+  
    <!-- response -->
    <script src="js/respond.min.js"></script>
 
@@ -82,9 +85,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-<div class="box">
-  
-</div>
+
 
     <!-- 플라잉 배너 -->
     <div class="fix-banner">
@@ -663,7 +664,7 @@ pagination: {
               spaceBetween: 10,
               breakpoints: {
                 1024: {
-                  spaceBetween: 24,
+                  spaceBetween: 32,
                   slidesPerView: 2,
                   // 화면당 2개씩 슬라이드 이동
                   slidesPerGroup: 2,
@@ -847,17 +848,16 @@ pagination: {
             </div>
             <script>
               new Swiper(".sw-ticket", {
-                slidesPerView: 5,
+                slidesPerView: "auto",
                 spaceBetween: 10,
                 breakpoints: {
                   1024: {
                     slidesPerView:3,
                     spaceBetween:32,
                   },
-                  // 1280 
-                  1028:{
+                  1280: {
                     slidesPerView: 4,
-                    spaceBetween:24,
+                    spaceBetween: 27,
                   },
                 },
               });
@@ -878,7 +878,7 @@ pagination: {
           <div class="section-slide">
             <button class="sw-bt sw-prev">이전</button>
             <button class="sw-bt sw-next">다음</button>
-            <!-- live sweipr -->
+            <!-- live swiper -->
             <div class="swiper sw-live">
               <div class="swiper-wrapper">
                 
@@ -1046,7 +1046,7 @@ pagination: {
           <div class="section-slide">
             <button class="sw-bt sw-prev">이전</button>
             <button class="sw-bt sw-next">다음</button>
-            <!-- book swiper -->
+            <!-- books Swiper -->
             <div class="swiper sw-books">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -1063,7 +1063,7 @@ pagination: {
                 <div class="swiper-slide">
                   <a href="#" class="books-link">
                   <div class="books-img">
-                    <img src="images/book1.jpg" alt="book">
+                    <img src="images/book2.jpg" alt="book">
                   </div>
                   <div class="books-info">
                     <p class="books-info-title">New 대한민국 청약지도 </p>
@@ -1074,7 +1074,7 @@ pagination: {
                 <div class="swiper-slide">
                   <a href="#" class="books-link">
                   <div class="books-img">
-                    <img src="images/book1.jpg" alt="book">
+                    <img src="images/book3.jpg" alt="book">
                   </div>
                   <div class="books-info">
                     <p class="books-info-title">New 대한민국 청약지도 </p>
@@ -1085,7 +1085,7 @@ pagination: {
                 <div class="swiper-slide">
                   <a href="#" class="books-link">
                   <div class="books-img">
-                    <img src="images/book1.jpg" alt="book">
+                    <img src="images/book4.jpg" alt="book">
                   </div>
                   <div class="books-info">
                     <p class="books-info-title">New 대한민국 청약지도 </p>
@@ -1096,7 +1096,7 @@ pagination: {
                 <div class="swiper-slide">
                   <a href="#" class="books-link">
                   <div class="books-img">
-                    <img src="images/book1.jpg" alt="book">
+                    <img src="images/book5.jpg" alt="book">
                   </div>
                   <div class="books-info">
                     <p class="books-info-title">New 대한민국 청약지도 </p>
@@ -1110,7 +1110,7 @@ pagination: {
               new Swiper(".sw-books",{
                 slidesPerView: 5,
                 spaceBetween: 28,
-              })
+              });
             </script>
 
 
@@ -1132,27 +1132,27 @@ pagination: {
           <div class="section-slide">
             <button class="sw-bt sw-prev">이전</button>
             <button class="sw-bt sw-next">다음</button>
-            <!-- event swiper -->
+            <!-- events Swiper -->
             <div class="swiper sw-events">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <a href="#" class="events-link">
-                    <img src="images/banner1.jpg" alt="이벤트">
+                    <img src="images/banner1.jpg" alt="이벤트"/>
                   </a>
                 </div>
                 <div class="swiper-slide">
                   <a href="#" class="events-link">
-                    <img src="images/banner1.jpg" alt="이벤트">
+                    <img src="images/banner2.jpg" alt="이벤트"/>
                   </a>
                 </div>
                 <div class="swiper-slide">
                   <a href="#" class="events-link">
-                    <img src="images/banner1.jpg" alt="이벤트">
+                    <img src="images/banner3.jpg" alt="이벤트"/>
                   </a>
                 </div>
                 <div class="swiper-slide">
                   <a href="#" class="events-link">
-                    <img src="images/banner1.jpg" alt="이벤트">
+                    <img src="images/banner4.jpg" alt="이벤트"/>
                   </a>
                 </div>
               </div>

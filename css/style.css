@@ -1030,7 +1030,7 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
-@media screen and (max-width: 1024) {
+@media screen and (max-width: 1024px) {
   .tour-img {
     /* height: 138px; */
   }
@@ -1189,9 +1189,15 @@ body {
     line-height: 45px;
   }
 
+.ticket-rank {
+  left:12px;
+  font-size:38px;
+  line-height:45px;
+}
+.ticket-img img {
+  transform: translate(-50% , -50%) scale(1.4);
+}
 
-
-  
 }
 @media screen and (max-width:760px) {
   
@@ -1208,9 +1214,9 @@ body {
   } */
   
  
-  .ticket-img {
+  /* .ticket-img {
     min-width: 200px;
-  }
+  } */
   
   .ticket-info {
     padding: 10px 5px;
@@ -1219,7 +1225,7 @@ body {
 font-size: 15px;
 line-height: 18px;
 height: 36px;
-font-weight: 400px;
+font-weight: 400;
   }
   .ticket-title b {}
   .ticket-hall {
