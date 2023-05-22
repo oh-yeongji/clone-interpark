@@ -306,6 +306,7 @@ window.onload = function () {
     let req = event.target;
     if (req.readyState === XMLHttpRequest.DONE) {
       ticketData = JSON.parse(req.response);
+      makeTicketSlide();
     }
   };
   ticketXhttp.open("GET", "ticketdata.json");
@@ -346,7 +347,6 @@ window.onload = function () {
 `;
 
       swTicketHtml += temp;
-     
     }
 
     let swTicketWrapper = document.querySelector(".sw-ticket .swiper-wrapper");
@@ -374,151 +374,170 @@ window.onload = function () {
         },
       },
     });
+  }
 
+  
+    //live json 연동
+    let liveData;
+    const liveXhttp= new XMLHttpRequest();
+      liveXhttp.onreadystatechange = function(event){
+        let req =event.target;
+        if (req.readyState ===XMLHttpRequest.DONE) {
+          liveData =JSON.parse(req.response);
+          makeLiveSlide();
+        }
+      };
+liveXhttp.open("GET","livedata.json");
+liveXhttp.send();
+
+function makeLiveSlide() {
+  let swLiveHtml =``;
+  for (let i =0 ; i < liveData.live_total; i++) {
+    let obj =liveData[`live_${i+1}`];
+    let temp = `
+    <div class="swiper-slide">
+    <a href="${obj.link}" class="live-link">
+      <div class="live-img">
+        <img src="images/${obj.pic}" alt="라이브" />
+      </div>
+      <div class="live-info">
+        <div class="live-info-top">
+          <span class="live-info-cate">방송예정</span>
+          <p class="live-info-title">
+            2박 3일로 떠나는 후쿠오카 여행✈ 패키지VS자유여행 다
+            준비했어요😆
+          </p>
+        </div>
+        <div class="live-info-main">
+          <p class="live-info-date">04월 27일 (목요일)</p>
+          <p class="live-info-time">16:00</p>
+        </div>
+        <div class="live-info-bottom clearfix">
+          <div class="live-info-thumb">
+            <img src="images/live1.jpg" alt="라이브" />
+          </div>
+          <div class="live-info-desc">
+            <p class="live-info-desc-title">
+              [미미의밥상] 감자탕 4.7kg(국내산등뼈 100%
+              10인분)+라면사리
+            </p>
+            <p class="live-info-desc-price">
+              <em>22%</em> <b>19,840</b>원
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+    </div>
+    <div class="swiper-slide">
+    <a href="#" class="live-link">
+      <div class="live-img">
+        <img src="images/live2.jpg" alt="라이브" />
+      </div>
+      <div class="live-info">
+        <div class="live-info-top">
+          <span class="live-info-cate">방송예정</span>
+          <p class="live-info-title">
+            2박 3일로 떠나는 후쿠오카 여행✈ 패키지VS자유여행 다
+            준비했어요😆
+          </p>
+        </div>
+        <div class="live-info-main">
+          <p class="live-info-date">04월 27일 (목요일)</p>
+          <p class="live-info-time">19:00</p>
+        </div>
+        <div class="live-info-bottom clearfix">
+          <div class="live-info-thumb">
+            <img src="images/live1.jpg" alt="라이브" />
+          </div>
+          <div class="live-info-desc">
+            <p class="live-info-desc-title">
+              [미미의밥상] 감자탕 4.7kg(국내산등뼈 100%
+              10인분)+라면사리
+            </p>
+            <p class="live-info-desc-price">
+              <em>22%</em> <b>19,840</b>원
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+    </div>
+    <div class="swiper-slide">
+    <a href="#" class="live-link">
+      <div class="live-img">
+        <img src="images/live3.jpg" alt="라이브" />
+      </div>
+      <div class="live-info">
+        <div class="live-info-top">
+          <span class="live-info-cate">방송예정</span>
+          <p class="live-info-title">
+            2박 3일로 떠나는 후쿠오카 여행✈ 패키지VS자유여행 다
+            준비했어요😆
+          </p>
+        </div>
+        <div class="live-info-main">
+          <p class="live-info-date">04월 27일 (목요일)</p>
+          <p class="live-info-time">16:00</p>
+        </div>
+        <div class="live-info-bottom clearfix">
+          <div class="live-info-thumb">
+            <img src="images/live1.jpg" alt="라이브" />
+          </div>
+          <div class="live-info-desc">
+            <p class="live-info-desc-title">
+              [미미의밥상] 감자탕 4.7kg(국내산등뼈 100%
+              10인분)+라면사리
+            </p>
+            <p class="live-info-desc-price">
+              <em>22%</em> <b>19,840</b>원
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+    </div>
+    <div class="swiper-slide">
+    <a href="#" class="live-link">
+      <div class="live-img">
+        <img src="images/live4.jpg" alt="라이브" />
+      </div>
+      <div class="live-info">
+        <div class="live-info-top">
+          <span class="live-info-cate">방송예정</span>
+          <p class="live-info-title">
+            2박 3일로 떠나는 후쿠오카 여행✈ 패키지VS자유여행 다
+            준비했어요😆
+          </p>
+        </div>
+        <div class="live-info-main">
+          <p class="live-info-date">04월 28일 (금요일)</p>
+          <p class="live-info-time">20:30</p>
+        </div>
+        <div class="live-info-bottom clearfix">
+          <div class="live-info-thumb">
+            <img src="images/live1.jpg" alt="라이브" />
+          </div>
+          <div class="live-info-desc">
+            <p class="live-info-desc-title">
+              [미미의밥상] 감자탕 4.7kg(국내산등뼈 100%
+              10인분)+라면사리
+            </p>
+            <p class="live-info-desc-price">
+              <em>22%</em> <b>19,840</b>원
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+    </div>
     
-//live json
-    let liveData = {
-      live_1: { pic: "", cate: "", title: "", date: "", time: "" },
-    };
-    let swLiveHtml = `
-<div class="swiper-slide">
-<a href="#" class="live-link">
-  <div class="live-img">
-    <img src="images/live1.jpg" alt="라이브" />
-  </div>
-  <div class="live-info">
-    <div class="live-info-top">
-      <span class="live-info-cate">방송예정</span>
-      <p class="live-info-title">
-        2박 3일로 떠나는 후쿠오카 여행✈ 패키지VS자유여행 다
-        준비했어요😆
-      </p>
-    </div>
-    <div class="live-info-main">
-      <p class="live-info-date">04월 27일 (목요일)</p>
-      <p class="live-info-time">16:00</p>
-    </div>
-    <div class="live-info-bottom clearfix">
-      <div class="live-info-thumb">
-        <img src="images/live1.jpg" alt="라이브" />
-      </div>
-      <div class="live-info-desc">
-        <p class="live-info-desc-title">
-          [미미의밥상] 감자탕 4.7kg(국내산등뼈 100%
-          10인분)+라면사리
-        </p>
-        <p class="live-info-desc-price">
-          <em>22%</em> <b>19,840</b>원
-        </p>
-      </div>
-    </div>
-  </div>
-</a>
-</div>
-<div class="swiper-slide">
-<a href="#" class="live-link">
-  <div class="live-img">
-    <img src="images/live2.jpg" alt="라이브" />
-  </div>
-  <div class="live-info">
-    <div class="live-info-top">
-      <span class="live-info-cate">방송예정</span>
-      <p class="live-info-title">
-        2박 3일로 떠나는 후쿠오카 여행✈ 패키지VS자유여행 다
-        준비했어요😆
-      </p>
-    </div>
-    <div class="live-info-main">
-      <p class="live-info-date">04월 27일 (목요일)</p>
-      <p class="live-info-time">19:00</p>
-    </div>
-    <div class="live-info-bottom clearfix">
-      <div class="live-info-thumb">
-        <img src="images/live1.jpg" alt="라이브" />
-      </div>
-      <div class="live-info-desc">
-        <p class="live-info-desc-title">
-          [미미의밥상] 감자탕 4.7kg(국내산등뼈 100%
-          10인분)+라면사리
-        </p>
-        <p class="live-info-desc-price">
-          <em>22%</em> <b>19,840</b>원
-        </p>
-      </div>
-    </div>
-  </div>
-</a>
-</div>
-<div class="swiper-slide">
-<a href="#" class="live-link">
-  <div class="live-img">
-    <img src="images/live3.jpg" alt="라이브" />
-  </div>
-  <div class="live-info">
-    <div class="live-info-top">
-      <span class="live-info-cate">방송예정</span>
-      <p class="live-info-title">
-        2박 3일로 떠나는 후쿠오카 여행✈ 패키지VS자유여행 다
-        준비했어요😆
-      </p>
-    </div>
-    <div class="live-info-main">
-      <p class="live-info-date">04월 27일 (목요일)</p>
-      <p class="live-info-time">16:00</p>
-    </div>
-    <div class="live-info-bottom clearfix">
-      <div class="live-info-thumb">
-        <img src="images/live1.jpg" alt="라이브" />
-      </div>
-      <div class="live-info-desc">
-        <p class="live-info-desc-title">
-          [미미의밥상] 감자탕 4.7kg(국내산등뼈 100%
-          10인분)+라면사리
-        </p>
-        <p class="live-info-desc-price">
-          <em>22%</em> <b>19,840</b>원
-        </p>
-      </div>
-    </div>
-  </div>
-</a>
-</div>
-<div class="swiper-slide">
-<a href="#" class="live-link">
-  <div class="live-img">
-    <img src="images/live4.jpg" alt="라이브" />
-  </div>
-  <div class="live-info">
-    <div class="live-info-top">
-      <span class="live-info-cate">방송예정</span>
-      <p class="live-info-title">
-        2박 3일로 떠나는 후쿠오카 여행✈ 패키지VS자유여행 다
-        준비했어요😆
-      </p>
-    </div>
-    <div class="live-info-main">
-      <p class="live-info-date">04월 28일 (금요일)</p>
-      <p class="live-info-time">20:30</p>
-    </div>
-    <div class="live-info-bottom clearfix">
-      <div class="live-info-thumb">
-        <img src="images/live1.jpg" alt="라이브" />
-      </div>
-      <div class="live-info-desc">
-        <p class="live-info-desc-title">
-          [미미의밥상] 감자탕 4.7kg(국내산등뼈 100%
-          10인분)+라면사리
-        </p>
-        <p class="live-info-desc-price">
-          <em>22%</em> <b>19,840</b>원
-        </p>
-      </div>
-    </div>
-  </div>
-</a>
-</div>
+    `;
+    swLiveHtml+= temp;
+  }
+}      
+   
 
-`;
     let swLiveWrapper = document.querySelector(".sw-live .swiper-wrapper");
     swLiveWrapper.innerHTML = swLiveHtml;
 
