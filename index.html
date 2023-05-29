@@ -94,8 +94,21 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- js 파일 로딩 -->
     <script src="js/index.js"></script>
+    <script src="js/shopping.js"></script>
+    <script src="js/tour.js"></script>
+    <script src="js/ticket.js"></script>
+    <script src="js/live.js"></script>
+    <script src="js/books.js"></script>
+
   </head>
+
   <body>
+    <!-- 클론코드 안내창 -->
+    <!-- <div class="modal">
+      <div class="modal-cont">
+        클론코드 저작권 안내 및 스터디 내용, 깃주소 , Notion주소 , 이메일 주소
+      </div>
+    </div> -->
     <!-- 플라잉 배너 -->
     <div class="fix-banner">
       <a href="#"><img src="images/wingBanner.png" alt="배너" /></a>
@@ -394,10 +407,10 @@
             <h2>오늘의 도서</h2>
             <p>지금 읽기 딱 좋은 책, 놓치지 마세요!</p>
             <div class="btns">
-              <a href="#">MD's Pick</a>
+              <!-- <a href="#">MD's Pick</a>
               <a href="#">베스트셀러</a>
               <a href="#">신간추천</a>
-              <a href="#">특가할인</a>
+              <a href="#">특가할인</a> -->
             </div>
           </div>
           <div class="section-slide">
@@ -407,117 +420,6 @@
             <div class="swiper sw-books">
               <div class="swiper-wrapper">
                  <!-- json으로 출력 -->
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                    <div class="books-img">
-                      <img src="images/book1.jpg" alt="book" />
-                    </div>
-                    <div class="books-info">
-                      <p class="books-info-title">New 대한민국 청약지도</p>
-                      <p class="books-info-price"><em>18,000</em>원</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                  <div class="books-img">
-                    <img src="images/book2.jpg" alt="book">
-                  </div>
-                  <div class="books-info">
-                    <p class="books-info-title">New 대한민국 청약지도 </p>
-                    <p class="books-info-price"><em>18,000</em>원</p>
-                  </div>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                  <div class="books-img">
-                    <img src="images/book3.jpg" alt="book">
-                  </div>
-                  <div class="books-info">
-                    <p class="books-info-title">New 대한민국 청약지도 </p>
-                    <p class="books-info-price"><em>18,000</em>원</p>
-                  </div>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                  <div class="books-img">
-                    <img src="images/book4.jpg" alt="book">
-                  </div>
-                  <div class="books-info">
-                    <p class="books-info-title">New 대한민국 청약지도 </p>
-                    <p class="books-info-price"><em>18,000</em>원</p>
-                  </div>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                  <div class="books-img">
-                    <img src="images/book5.jpg" alt="book">
-                  </div>
-                  <div class="books-info">
-                    <p class="books-info-title">New 대한민국 청약지도 </p>
-                    <p class="books-info-price"><em>18,000</em>원</p>
-                  </div>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                    <div class="books-img">
-                      <img src="images/book1.jpg" alt="book" />
-                    </div>
-                    <div class="books-info">
-                      <p class="books-info-title">New 대한민국 청약지도</p>
-                      <p class="books-info-price"><em>18,000</em>원</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                  <div class="books-img">
-                    <img src="images/book2.jpg" alt="book">
-                  </div>
-                  <div class="books-info">
-                    <p class="books-info-title">New 대한민국 청약지도 </p>
-                    <p class="books-info-price"><em>18,000</em>원</p>
-                  </div>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                  <div class="books-img">
-                    <img src="images/book3.jpg" alt="book">
-                  </div>
-                  <div class="books-info">
-                    <p class="books-info-title">New 대한민국 청약지도 </p>
-                    <p class="books-info-price"><em>18,000</em>원</p>
-                  </div>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                  <div class="books-img">
-                    <img src="images/book4.jpg" alt="book">
-                  </div>
-                  <div class="books-info">
-                    <p class="books-info-title">New 대한민국 청약지도 </p>
-                    <p class="books-info-price"><em>18,000</em>원</p>
-                  </div>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="books-link">
-                  <div class="books-img">
-                    <img src="images/book5.jpg" alt="book">
-                  </div>
-                  <div class="books-info">
-                    <p class="books-info-title">New 대한민국 청약지도 </p>
-                    <p class="books-info-price"><em>18,000</em>원</p>
-                  </div>
-                  </a>
-                </div>
-
               </div>
             </div>
             
@@ -544,26 +446,8 @@
             <!-- events Swiper -->
             <div class="swiper sw-events">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <a href="#" class="events-link">
-                    <img src="images/banner1.jpg" alt="이벤트"/>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="events-link">
-                    <img src="images/banner2.jpg" alt="이벤트"/>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="events-link">
-                    <img src="images/banner3.jpg" alt="이벤트"/>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="#" class="events-link">
-                    <img src="images/banner4.jpg" alt="이벤트"/>
-                  </a>
-                </div>
+               
+							 <!--json출력 -->
               </div>
             </div>
 
