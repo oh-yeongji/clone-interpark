@@ -1,21 +1,26 @@
 window.addEventListener("load", function () {
+  //XML관련된거 다 날려버리고 
   // live Swiper
-  let liveData;
-  let liveXhttp = new XMLHttpRequest();
-  liveXhttp.onreadystatechange = function (event) {
-    const req = event.target;
-    if (req.readyState === XMLHttpRequest.DONE) {
-      liveData = JSON.parse(req.response);
-      makeLiveSlide();
-    }
-  };
-  liveXhttp.open("GET", "data/livedata.json");
-  liveXhttp.send();
+  // let liveData;
+  // let liveXhttp = new XMLHttpRequest();
+  // liveXhttp.onreadystatechange = function (event) {
+  //   const req = event.target;
+  //   if (req.readyState === XMLHttpRequest.DONE) {
+  //     // liveData = JSON.parse(req.response);
+  //     // makeLiveSlide();
+  //   }
+  // };
+  // liveXhttp.open("GET", "data/livedata.json");
+  fetch("data/livedata.json")
+    .then((res) => res.json())
+    .then((result) => makeLiveSlide(result))
+    .catch((err) => console.log(err));
+  // liveXhttp.send();
 
-  function makeLiveSlide() {
+  function makeLiveSlide(_data) {
     let swLiveHtml = ``;
-    for (i = 0; i < liveData.live_count; i++) {
-      let obj = liveData[`live_${i + 1}`];
+    for (i = 0; i < _data.live_count; i++) {  //_data는 liveData를 바꿔준거 liveData는 XML관련된것이기때문
+      let obj = _data[`live_${i + 1}`];
       let temp = `
         <div class="swiper-slide">
           <a href="${obj.link}" class="live-link">

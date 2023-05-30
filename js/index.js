@@ -43,7 +43,7 @@ window.onload = function () {
       // req/response는 데이터 타입이 문자열입니다.
       // 문자열을 json 객체로 변경하는 작업을 하셔야 합니다.
 
-       data = JSON.parse(req.response);
+      data = JSON.parse(req.response);
       makePromotionSlide();
     }
   };
@@ -149,104 +149,104 @@ window.onload = function () {
   //쇼핑
 
   //tour 데이터 파싱 및 슬라이드 제작
-  function parseTour(_cate) {
-    if (_cate === "망설이면 품절") {
-    } else if (_cate === "패키지") {
-    } else if (_cate === "숙소") {
-    } else if (_cate === "해외숙소") {
-    }
-  }
+  // function parseTour(_cate) {
+  //   if (_cate === "망설이면 품절") {
+  //   } else if (_cate === "패키지") {
+  //   } else if (_cate === "숙소") {
+  //   } else if (_cate === "해외숙소") {
+  //   }
+  // }
 
-  parseTour("망설이면 품절");
-  parseTour("패키지");
-  parseTour("숙소");
-  parseTour("해외숙소");
+  // parseTour("망설이면 품절");
+  // parseTour("패키지");
+  // parseTour("숙소");
+  // parseTour("해외숙소");
 
-  // 요청
-  let tourData;
-  const tourXhttp = new XMLHttpRequest();
-  // 이벤트가있다
-  tourXhttp.onreadystatechange = function (event) {
-    let req = event.target;
-    // 끝이랑 비교
-    if (req.readyState === XMLHttpRequest.DONE) {
-      tourData = JSON.parse(req.response);
-      makeTourSlide();
-    }
-  };
-  tourXhttp.open("GET", "tourdata.json");
-  tourXhttp.send();
-  function makeTourSlide() {
-    let swTourHtml = ``;
-    for (let i = 0; i < tourData.tour_total; i++) {
-      let obj = tourData[`tour_${i + 1}`];
-      // let cate = obj.category;
+  // // 요청
+  // let tourData;
+  // const tourXhttp = new XMLHttpRequest();
+  // // 이벤트가있다
+  // tourXhttp.onreadystatechange = function (event) {
+  //   let req = event.target;
+  //   // 끝이랑 비교
+  //   if (req.readyState === XMLHttpRequest.DONE) {
+  //     tourData = JSON.parse(req.response);
+  //     makeTourSlide();
+  //   }
+  // };
+  // tourXhttp.open("GET", "tourdata.json");
+  // tourXhttp.send();
+  // function makeTourSlide() {
+  //   let swTourHtml = ``;
+  //   for (let i = 0; i < tourData.tour_total; i++) {
+  //     let obj = tourData[`tour_${i + 1}`];
+  //     // let cate = obj.category;
 
-      let temp = `
-    <div class="swiper-slide">
-    <a href="${obj.link}" class="tour-link">
-      <div class="tour-img">
-        <img src="images/${obj.pic}" alt="${obj.alt}" />
-      </div>
-      <div class="tour-info">
-        <ul class="tour-info-list">
-          <li><span class="tour-cate">${obj.category}</span></li>
-          
-          <li>
-            <span class="tour-title"
-              >${obj.title}</span
-            >
-          </li>
-          <li>
-            <span class="tour-place">${obj.place}</span>
-          </li>
-          <li>
-            <span class="tour-price"><b>${obj.price}</b>원~</span>
-          </li>
-        </ul>
-      </div>
-    </a>
-  </div>
-    `;
-      swTourHtml += temp;
+  //     let temp = `
+  //   <div class="swiper-slide">
+  //   <a href="${obj.link}" class="tour-link">
+  //     <div class="tour-img">
+  //       <img src="images/${obj.pic}" alt="${obj.alt}" />
+  //     </div>
+  //     <div class="tour-info">
+  //       <ul class="tour-info-list">
+  //         <li><span class="tour-cate">${obj.category}</span></li>
 
-      let swTourWrapper = document.querySelector(".sw-tour .swiper-wrapper");
-      swTourWrapper.innerHTML = swTourHtml;
-      // <!-- tour swiper -->
-      let tourSwiper = new Swiper(".sw-tour", {
-        slidesPerView: 3,
-        grid: {
-          rows: 2,
-          fill: "row",
-        },
-        spaceBetween: 10,
-        navigation: {
-          nextEl: ".tour .sw-next",
-          prevEl: ".tour .sw-prev",
-        },
-        breakpoints: {
-          1024: {
-            spaceBetween: 32,
-            slidesPerView: 2,
-            // 화면당 2개씩 슬라이드 이동
-            slidesPerGroup: 2,
-            grid: {
-              rows: 1,
-            },
-          },
-          1280: {
-            spaceBetween: 26,
-            slidesPerView: 3,
-            // 화면당 4개씩 슬라이드 이동
-            slidesPerGroup: 3,
-            grid: {
-              rows: 1,
-            },
-          },
-        },
-      });
-    }
-  }
+  //         <li>
+  //           <span class="tour-title"
+  //             >${obj.title}</span
+  //           >
+  //         </li>
+  //         <li>
+  //           <span class="tour-place">${obj.place}</span>
+  //         </li>
+  //         <li>
+  //           <span class="tour-price"><b>${obj.price}</b>원~</span>
+  //         </li>
+  //       </ul>
+  //     </div>
+  //   </a>
+  // </div>
+  //   `;
+  //     swTourHtml += temp;
+
+  //     let swTourWrapper = document.querySelector(".sw-tour .swiper-wrapper");
+  //     swTourWrapper.innerHTML = swTourHtml;
+  //     // <!-- tour swiper -->
+  //     let tourSwiper = new Swiper(".sw-tour", {
+  //       slidesPerView: 3,
+  //       grid: {
+  //         rows: 2,
+  //         fill: "row",
+  //       },
+  //       spaceBetween: 10,
+  //       navigation: {
+  //         nextEl: ".tour .sw-next",
+  //         prevEl: ".tour .sw-prev",
+  //       },
+  //       breakpoints: {
+  //         1024: {
+  //           spaceBetween: 32,
+  //           slidesPerView: 2,
+  //           // 화면당 2개씩 슬라이드 이동
+  //           slidesPerGroup: 2,
+  //           grid: {
+  //             rows: 1,
+  //           },
+  //         },
+  //         1280: {
+  //           spaceBetween: 26,
+  //           slidesPerView: 3,
+  //           // 화면당 4개씩 슬라이드 이동
+  //           slidesPerGroup: 3,
+  //           grid: {
+  //             rows: 1,
+  //           },
+  //         },
+  //       },
+  //     });
+  //   }
+  // }
 
   //ticket json 연동
 
@@ -254,7 +254,5 @@ window.onload = function () {
 
   //book json연동
 
-  
-//event json연동
-
+  //event json연동
 };

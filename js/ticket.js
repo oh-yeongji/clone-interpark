@@ -8,32 +8,56 @@
 window.addEventListener("load", function () {
   // 티켓 데이터
   function parseTicket(_cate) {
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function (e) {
-      let req = e.target;
-      if (req.readyState === XMLHttpRequest.DONE) {
-        let data = JSON.parse(req.response);
-        makeTicketSlide(data);
-      }
-    };
     if (_cate === "뮤지컬") {
-      xhr.open("GET", "data/ticketdata.json");
+      // xhr.open("GET", "data/ticketdata.json");
+      fetch("data/ticketdata.json")
+        .then((res) => res.json())
+        .then((result) => makeTicketSlide(result))
+        .catch((err) => console.log(err));
     } else if (_cate === "콘서트") {
-      xhr.open("GET", "data/ticketdata1.json");
+      // xhr.open("GET", "data/ticketdata1.json");
+      fetch("data/ticketdata1.json")
+        .then((res) => res.json())
+        .then((result) => makeTicketSlide(result))
+        .catch((err) => console.log(err));
     } else if (_cate === "연극") {
-      xhr.open("GET", "data/ticketdata2.json");
+      // xhr.open("GET", "data/ticketdata2.json");
+      fetch("data/ticketdata2.json")
+        .then((res) => res.json())
+        .then((result) => makeTicketSlide(result))
+        .catch((err) => console.log(err));
     } else if (_cate === "클래식/무용") {
-      xhr.open("GET", "data/ticketdata3.json");
+      // xhr.open("GET", "data/ticketdata3.json");
+      fetch("data/ticketdata3.json")
+        .then((res) => res.json())
+        .then((result) => makeTicketSlide(result))
+        .catch((err) => console.log(err));
     } else if (_cate === "스포츠") {
-      xhr.open("GET", "data/ticketdata4.json");
+      // xhr.open("GET", "data/ticketdata4.json");
+      fetch("data/ticketdata4.json")
+        .then((res) => res.json())
+        .then((result) => makeTicketSlide(result))
+        .catch((err) => console.log(err));
     } else if (_cate === "레저/캠핑") {
-      xhr.open("GET", "data/ticketdata5.json");
+      // xhr.open("GET", "data/ticketdata5.json");
+      fetch("data/ticketdata5.json")
+        .then((res) => res.json())
+        .then((result) => makeTicketSlide(result))
+        .catch((err) => console.log(err));
     } else if (_cate === "전시/행사") {
-      xhr.open("GET", "data/ticketdata6.json");
+      // xhr.open("GET", "data/ticketdata6.json");
+      fetch("data/ticketdata6.json")
+        .then((res) => res.json())
+        .then((result) => makeTicketSlide(result))
+        .catch((err) => console.log(err));
     } else if (_cate === "아동/가족") {
-      xhr.open("GET", "data/ticketdata7.json");
+      // xhr.open("GET", "data/ticketdata7.json");
+      fetch("data/ticketdata7.json")
+        .then((res) => res.json())
+        .then((result) => makeTicketSlide(result))
+        .catch((err) => console.log(err));
     }
-    xhr.send();
+    // xhr.send();
   }
   parseTicket("뮤지컬");
   let ticketSwiper;
