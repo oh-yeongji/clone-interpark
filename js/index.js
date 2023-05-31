@@ -1,6 +1,6 @@
 // 사용되는 리소스가  모두 완료되고나서
 // js를 실행하여야 정상적인 처리가 가능하다.
-window.onload = function () {
+window.addEventListener("load",function () {
   //모달창 처리
   // let body = document.querySelector("body");
   // body.classList.add("modal-active");
@@ -56,14 +56,14 @@ window.onload = function () {
     for (let i = 0; i < data.good_count; i++) {
       let obj = data[`good_${i + 1}`];
 
-      let html = `
+      let temp = `
       <div class="swiper-slide">
         <a href="${obj.link}">
           <img src="images/${obj.img}" alt="${obj.name}">
         </a>
       </div>
       `;
-      swPromotionHtml += html;
+      swPromotionHtml += temp;
     }
     // 위의 백틱 내용을 넣어줄 장소를 저장
     let swPromotionWrapper = document.querySelector(
@@ -255,4 +255,4 @@ window.onload = function () {
   //book json연동
 
   //event json연동
-};
+});

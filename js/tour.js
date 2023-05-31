@@ -8,7 +8,8 @@
 window.addEventListener("load", function () {
   // tour 데이터 파싱 및 슬라이드 제작
   function parseTour(_cate) {
-    // let xhr = new XMLHttpRequest();
+//xml관련된걸 지운다
+		// let xhr = new XMLHttpRequest();
     // xhr.onreadystatechange = function (event) {
     //   let req = event.target;
     //   if (req.readyState === XMLHttpRequest.DONE) {
@@ -45,6 +46,7 @@ window.addEventListener("load", function () {
 
     // tourXhttp.send();
   }
+	//처음을 망설이면 품절로 시작
   parseTour("망설이면 품절");
 
   let tourSwiper;

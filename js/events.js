@@ -1,6 +1,7 @@
 window.addEventListener("load", function () {
-  function parseEvent(_cat e) {
-    const xhr = new XMLHttpRequest();
+  function parseEvent(_cate) {
+		const xhr = new XMLHttpRequest();
+	
     xhr.onreadystatechange = function (e) {
       let req = e.target;
       if (req.readyState === XMLHttpRequest.DONE) {
@@ -11,8 +12,9 @@ window.addEventListener("load", function () {
 
     xhr.open("GET", "data/events.json");
     xhr.send();
-  }
+  };
   parseEvent(_cate);
+
   let eventSwiper;
   function makeEventSlide(_data) {
     let swEventHtml = ``;
@@ -31,9 +33,9 @@ window.addEventListener("load", function () {
 
     let swEventWrapper = document.querySelector("sw-events .swiper-wrapper");
     swEventWrapper.innerHTML = swEventHtml;
-    if (eventSwiper) {
-      eventSwiper.destroy();
-    }
+    // if (eventSwiper) {
+    //   eventSwiper.destroy();
+    // }
     // <!-- event-swiper -->
     eventSwiper = new Swiper(".sw-events", {
       slidesPerView: 3,
