@@ -1,44 +1,44 @@
 window.addEventListener("load", function () {
   let data;
-  function parseEvent() {
-    const xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function (e) {
-      let req = e.target;
-      if (req.readyState === XMLHttpRequest.DONE) {
-        data = JSON.parse(req.response);
-        makeEventSlide();
-      }
-    };
-
-    xhr.open("GET", "data/events.json");
-    xhr.send();
-  }
-  parseEvent();
-  let eventSwiper;
-  function makeEventSlide() {
-    let swEventHtml = ``;
-    for (let i = 0; i < _data.event_total; i++) {
-      let obj = _data[`event_${i + 1}`];
-      let temp = `
-	<div class="swiper-slide">
-	<a href="${obj.link}" class="events-link">
-		<img src="images/${obj.img}" alt="${obj.alt}"/>
-	</a>
-	</div>
 	
-	`;
+	let xhr = new XMLHttpRequest();
+  
+	xhr.onreadystatechange = function (e) {
+		
+		let req = e.target;
+		if (req.readyState === XMLHttpRequest.DONE) {
+			data = JSON.parse(req.response);
+			makeEventSlide();
+		}
+	};
+	
+	xhr.open("GET", "data/events.json");
+	xhr.send();
+  
+  // let eventSwiper;
+  function makeEventSlide() {
+		let swEventHtml = ``;
+    for (let i = 0; i < data.event_total; i++) {
+			let obj = data[`event_${i + 1}`];
+      let temp = `
+			<div class="swiper-slide">
+			<a href="${obj.link}" class="events-link">
+			<img src="images/${obj.img}" alt="${obj.alt}"/>
+			</a>
+			</div>
+			
+			`;
       swEventHtml += temp;
     }
-
-    let swEventWrapper = document.querySelector("sw-events .swiper-wrapper");
+		
+    let swEventWrapper = document.querySelector(".sw-events .swiper-wrapper");
     swEventWrapper.innerHTML = swEventHtml;
 
     // if (eventSwiper) {
     //   eventSwiper.destroy();
     // }
     // <!-- event-swiper -->
-    eventSwiper = new Swiper(".sw-events", {
+    let eventSwiper = new Swiper(".sw-events", {
       slidesPerView: 3,
       spaceBetween: 27,
       navigation: {
