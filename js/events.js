@@ -1,23 +1,22 @@
 window.addEventListener("load", function () {
-  function parseEvent(_cate) {
+  let data;
+  function parseEvent() {
     const xhr = new XMLHttpRequest();
-	
-	
+
     xhr.onreadystatechange = function (e) {
       let req = e.target;
       if (req.readyState === XMLHttpRequest.DONE) {
-        let data = JSON.parse(req.response);
-        makeEventSlide(data);
+        data = JSON.parse(req.response);
+        makeEventSlide();
       }
     };
 
     xhr.open("GET", "data/events.json");
     xhr.send();
-  };
-  parseEvent(_cate);
-
+  }
+  parseEvent();
   let eventSwiper;
-  function makeEventSlide(_data) {
+  function makeEventSlide() {
     let swEventHtml = ``;
     for (let i = 0; i < _data.event_total; i++) {
       let obj = _data[`event_${i + 1}`];
@@ -34,7 +33,7 @@ window.addEventListener("load", function () {
 
     let swEventWrapper = document.querySelector("sw-events .swiper-wrapper");
     swEventWrapper.innerHTML = swEventHtml;
-  
+
     // if (eventSwiper) {
     //   eventSwiper.destroy();
     // }
