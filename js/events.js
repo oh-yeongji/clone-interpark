@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-  function parseEvent(_cat e) {
+  function parseEvent(_cate) {
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function (e) {
       let req = e.target;
