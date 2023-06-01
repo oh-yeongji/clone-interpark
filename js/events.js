@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
   function parseEvent(_cate) {
     const xhr = new XMLHttpRequest();
-		const xhr = new XMLHttpRequest();
+	
 	
     xhr.onreadystatechange = function (e) {
       let req = e.target;
@@ -34,9 +34,7 @@ window.addEventListener("load", function () {
 
     let swEventWrapper = document.querySelector("sw-events .swiper-wrapper");
     swEventWrapper.innerHTML = swEventHtml;
-    if (eventSwiper) {
-      eventSwiper.destroy();
-    }
+  
     // if (eventSwiper) {
     //   eventSwiper.destroy();
     // }
