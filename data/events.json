@@ -1,43 +1,43 @@
 {
-	"event_total:":8,
-	"event_1":{
-	"link":"#",
-	"img":"banner1.jpg",
-	"alt":"이벤트1"
-	},
-	"event_2":{
-	"link":"#",
-	"img":"banner2.jpg",
-	"alt":"이벤트2"
-	},
-	"event_3":{
-		"link":"#",
-		"img":"banner3.jpg",
-		"alt":"이벤트3"
-	},
-	"event_4":{
-		"link":"#",
-		"img":"banner4.jpg",
-		"alt":"이벤트4"
-	},
-	"event_5":{
-		"link":"#",
-		"img":"banner5.jpg",
-		"alt":"이벤트5"
-	},
-	"event_6":{
-		"link":"#",
-		"img":"banner6.jpg",
-		"alt":"이벤트6"
-	},
-	"event_7":{
-		"link":"#",
-		"img":"banner7.jpg",
-		"alt":"이벤트7"
-	},
-	"event_8":{
-		"link":"#",
-		"img":"banner8.jpg",
-		"alt":"이벤트8"
-	}
+  "event_total": 8,
+  "event_1": {
+    "link": "#",
+    "img": "banner1.jpg",
+    "alt": "이벤트1"
+  },
+  "event_2": {
+    "link": "#",
+    "img": "banner2.jpg",
+    "alt": "이벤트2"
+  },
+  "event_3": {
+    "link": "#",
+    "img": "banner3.jpg",
+    "alt": "이벤트3"
+  },
+  "event_4": {
+    "link": "#",
+    "img": "banner4.jpg",
+    "alt": "이벤트4"
+  },
+  "event_5": {
+    "link": "#",
+    "img": "banner5.jpg",
+    "alt": "이벤트5"
+  },
+  "event_6": {
+    "link": "#",
+    "img": "banner6.jpg",
+    "alt": "이벤트6"
+  },
+  "event_7": {
+    "link": "#",
+    "img": "banner7.jpg",
+    "alt": "이벤트7"
+  },
+  "event_8": {
+    "link": "#",
+    "img": "banner8.jpg",
+    "alt": "이벤트8"
+  }
 }

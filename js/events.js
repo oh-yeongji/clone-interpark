@@ -12,26 +12,27 @@ window.addEventListener("load", function () {
     };
 
     xhr.open("GET", "data/events.json");
+
     xhr.send();
   }
   parseEvent();
   let eventSwiper;
   function makeEventSlide() {
     let swEventHtml = ``;
-    for (let i = 0; i < _data.event_total; i++) {
-      let obj = _data[`event_${i + 1}`];
+    for (let i = 0; i < data.event_total; i++) {
+      let obj = data[`event_${i + 1}`];
       let temp = `
-	<div class="swiper-slide">
-	<a href="${obj.link}" class="events-link">
-		<img src="images/${obj.img}" alt="${obj.alt}"/>
-	</a>
-	</div>
-	
+      <div class="swiper-slide">
+      <a href="${obj.link}" class="events-link">
+        <img src="images/${obj.img}" alt="${obj.alt}"/>
+      </a>
+      </div>	
 	`;
       swEventHtml += temp;
     }
 
-    let swEventWrapper = document.querySelector("sw-events .swiper-wrapper");
+    console.log(swEventHtml);
+    let swEventWrapper = document.querySelector(".sw-events .swiper-wrapper");
     swEventWrapper.innerHTML = swEventHtml;
 
     // if (eventSwiper) {
