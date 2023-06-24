@@ -8,8 +8,8 @@
 window.addEventListener("load", function () {
   // tour 데이터 파싱 및 슬라이드 제작
   function parseTour(_cate) {
-//xml관련된걸 지운다
-		// let xhr = new XMLHttpRequest();
+    //xml관련된걸 지운다
+    // let xhr = new XMLHttpRequest();
     // xhr.onreadystatechange = function (event) {
     //   let req = event.target;
     //   if (req.readyState === XMLHttpRequest.DONE) {
@@ -46,7 +46,7 @@ window.addEventListener("load", function () {
 
     // tourXhttp.send();
   }
-	//처음을 망설이면 품절로 시작
+  //처음을 망설이면 품절로 시작
   parseTour("망설이면 품절");
 
   let tourSwiper;
@@ -127,15 +127,19 @@ window.addEventListener("load", function () {
     });
   }
 
-  let btns = document.querySelectorAll(".tour .btns a");
+  const btns = document.querySelectorAll(".tour .btns a");
   let cateName = ["망설이면 품절", "패키지", "숙소", "해외숙소"];
+
   for (let i = 0; i < cateName.length; i++) {
     btns[i].onclick = function (event) {
       event.preventDefault();
       parseTour(cateName[i]);
+      for (let j = 0; j < btns.length; j++) {
+        btns[j].classList.remove("btns-active");
+      }
+
+      //포커스 적용
+      this.classList.add("btns-active"); //색 들어있게 하는법(포커스)
     };
   }
-
-  //포커스 적용
-  btns[0].classList.add("btns-active"); //색 들어있게 하는법(포커스)
 });
