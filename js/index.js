@@ -2,13 +2,13 @@
 // js를 실행하여야 정상적인 처리가 가능하다.
 window.addEventListener("load",function () {
   //모달창 처리
-  // let body = document.querySelector("body");
-  // body.classList.add("modal-active");
-  // let modal = document.querySelector(".modal");
-  // modal.onclick = function () {
-  //   body.classList.remove("modal-active");
-  //   this.style.display = "none";
-  // };
+  let body = document.querySelector("body");
+  body.classList.add("modal-active");
+  let modal = document.querySelector(".modal");
+  modal.onclick = function () {
+    body.classList.remove("modal-active");
+    this.style.display = "none";
+  };
 
   //위로 이동하기
   // .gotop을 js에 저장하자.
