@@ -39,10 +39,15 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
-  /* z-index: 9999999999; */
-  z-index: -1;
-  
+  z-index: 9999999999;
+
   /* z-index  -1를 깨서 나중에 하기 */
+}
+.modal-close {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  font-size: 50px;
 }
 .modal-cont {
   width: 600px;
@@ -50,6 +55,27 @@ body {
   border-radius: 20px;
   background: #fff;
 }
+.modal-cont h2 {
+  padding: 20px 35px 0px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 40px;
+}
+.modal-cont .link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-cont .link .github-link {
+  font-size: 40px;
+  padding: 0 30px;
+}
+
+.modal-cont .link .email-link {
+  font-size: 40px;
+  padding: 0 30px;
+}
+
 .modal-active {
   overflow: hidden !important;
 }
@@ -208,7 +234,7 @@ body {
   background: url("../images/icon_linkArrow.svg") no-repeat center;
 }
 
-@media screen and (max-width: 1280px) {
+/* @media screen and (max-width: 1280px) {
   .wrap > section {
   }
 
@@ -218,14 +244,14 @@ body {
   }
   .section-top > p {
   }
-}
+} */
 @media screen and (max-width: 1024px) {
   .wrap > section {
     padding-top: 30px;
     padding-bottom: 0px;
   }
-  .section-top {
-  }
+  /* .section-top {
+  } */
   .section-top > h2 {
     font-size: 20px;
     line-height: 24px;
@@ -254,14 +280,14 @@ body {
   }
 }
 @media screen and (max-width: 760px) {
-  .wrap > section {
+  /* .wrap > section {
   }
   .section-top {
   }
   .section-top > h2 {
   }
   .section-top > p {
-  }
+  } */
 }
 
 /* 플라잉 배너 */
@@ -303,8 +329,8 @@ body {
   align-items: center;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
-.quick-menu a {
-}
+/* .quick-menu a {
+} */
 @media screen and (max-width: 1024px) {
   .quick-menu {
     display: block;
@@ -365,8 +391,8 @@ body {
 }
 
 /* 기본레이아웃 */
-.wrap {
-}
+/* .wrap {
+} */
 /* 상단 */
 .header {
   position: relative;
@@ -378,8 +404,8 @@ body {
   padding-top: 30px;
   height: 160px;
 }
-.header-up {
-}
+/* .header-up {
+} */
 
 .header-left {
   position: relative;
@@ -519,8 +545,8 @@ body {
   transition: all 0.5s;
 }
 
-.mypage-list {
-}
+/* .mypage-list {
+} */
 .mypage-list li {
   margin: 10px 0;
 }
@@ -548,8 +574,8 @@ body {
   right: 10px;
 }
 
-.header-down {
-}
+/* .header-down {
+} */
 
 .service-list {
   display: block;
@@ -668,8 +694,8 @@ body {
 }
 
 /* 추천이벤트 */
-.promotion {
-}
+/* .promotion {
+} */
 
 .promotion .inner {
   height: 345px;
@@ -707,8 +733,8 @@ body {
   }
 }
 @media screen and (max-width: 1024px) {
-  .promotion {
-  }
+  /* .promotion {
+  } */
   .promotion .inner {
     height: 300px;
   }
@@ -768,11 +794,11 @@ body {
 }
 
 /* 쇼핑추천 */
-.shopping {
-}
-.shopping .section-slide {
-  /* height: 405px; */
-}
+/* .shopping {
+} */
+/* .shopping .section-slide {
+  height: 405px;
+} */
 
 .sw-shopping {
   height: 100%;
@@ -802,10 +828,10 @@ body {
   padding: 20px;
 }
 
-.good-info-list {
+/* .good-info-list {
 }
 .good-info-list li {
-}
+} */
 .good-info-list li b {
   font-size: 20px;
   line-height: 24px;
@@ -872,12 +898,12 @@ body {
 }
 
 /* 투어특가 */
-.tour {
-}
+/* .tour {
+} */
 
-.tour .section-slide {
-  /* height: 355px; */
-}
+/* .tour .section-slide {
+  height: 355px;
+} */
 .sw-tour {
   height: 100%;
 }
@@ -917,8 +943,8 @@ body {
   padding: 20px;
   background: #fff;
 }
-.tour-info-list {
-}
+/* .tour-info-list {
+} */
 .tour-info-list li {
   position: relative;
   margin-bottom: 3px;
@@ -947,8 +973,8 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.tour-place {
-}
+/* .tour-place {
+} */
 .tour-price {
   color: #111;
   font-size: 16px;
@@ -960,9 +986,9 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  .tour-img {
-    /* height: 138px; */
-  }
+  /* .tour-img {
+    height: 138px;
+  } */
   .tour-info {
     padding: 10px;
   }
@@ -988,11 +1014,11 @@ body {
 }
 
 /* 티켓랭킹 */
-.ticket {
-}
-.ticket .section-slide {
-  /* height: 540px; */
-}
+/* .ticket {
+} */
+/* .ticket .section-slide {
+  height: 540px;
+} */
 .ticket .section-slide .sw-bt {
   top: 35%;
 }
@@ -1049,8 +1075,8 @@ body {
   padding: 20px 10px;
   background: #fff;
 }
-.ticket-info-list {
-}
+/* .ticket-info-list {
+} */
 .ticket-info-list li {
   margin-bottom: 5px;
 }
@@ -1128,8 +1154,8 @@ body {
     height: 36px;
     font-weight: 400;
   }
-  .ticket-title b {
-  }
+  /* .ticket-title b {
+  } */
   .ticket-hall {
     font-size: 13px;
     line-height: 16px;
@@ -1147,8 +1173,8 @@ body {
 }
 
 /* 인터파크 라이브 */
-.live {
-}
+/* .live {
+} */
 
 .live .section-top {
   margin-bottom: 25px;
@@ -1193,8 +1219,8 @@ body {
   padding: 20px;
 }
 
-.live-info-top {
-}
+/* .live-info-top {
+} */
 .live-info-cate {
   display: inline-block;
   line-height: 32px;
@@ -1389,11 +1415,11 @@ body {
 }
 
 /* 오늘의 도서 */
-.books {
-}
-.books .section-slide {
-  /* height: 400px; */
-}
+/* .books {
+} */
+/* .books .section-slide {
+   height: 400px; 
+} */
 
 .books .section-slide .sw-bt {
   top: 41%;
@@ -1476,8 +1502,8 @@ body {
 }
 
 /* 이벤트 */
-.event {
-}
+/* .event {
+} */
 .event .section-top {
   margin-bottom: 20px;
 }
@@ -1515,8 +1541,8 @@ body {
 }
 
 /* 하단 */
-.footer {
-}
+/* .footer {
+} */
 .footer-menu {
   /* z-index적용할때 position줘야함 */
   position: relative;
@@ -1525,8 +1551,8 @@ body {
   padding: 20px 0;
   z-index: 99;
 }
-.footer-menu .inner {
-}
+/* .footer-menu .inner {
+} */
 .footer-menu-list {
   display: flex;
   justify-content: space-between;
@@ -1632,8 +1658,8 @@ body {
 .company-info li:last-child {
   margin-bottom: 0px;
 }
-.company-info li span {
-}
+/* .company-info li span {
+} */
 .company-info li span.f-line::after {
   display: inline-block;
   position: relative;
@@ -1676,8 +1702,8 @@ body {
   padding: 30px 0;
   text-align: center;
 }
-.footer-mobile-menu {
-}
+/* .footer-mobile-menu {
+} */
 
 .footer-mobile-menu a,
 .footer-mobile-info a {
