@@ -6,7 +6,7 @@
  * 업데이트 : 각 Tour 리스트 목록 출력 함수화 작업
  */
 window.addEventListener("load", function () {
-  // tour 데이터 파싱 및 슬라이드 제작
+ 
   function parseTour(_cate) {
     
     if (_cate === "망설이면 품절") {
